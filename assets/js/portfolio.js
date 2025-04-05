@@ -1,16 +1,3 @@
-/*!
-=========================================================
-* Meyawo Landing page
-=========================================================
-
-* Copyright: 2019 DevCRUD (https://devcrud.com)
-* Licensed: (https://devcrud.com/licenses)
-* Coded by www.devcrud.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
 
 // smooth scroll
 $(document).ready(function(){
@@ -35,4 +22,25 @@ $(document).ready(function(){
 $('#nav-toggle').click(function(){
     $(this).toggleClass('is-active')
     $('ul.nav').toggleClass('show');
+});
+
+$('.contact-form').on('submit', function(e) {
+  e.preventDefault();
+  var form = this;
+  var formData = new FormData(form);
+
+  $.ajax({
+    url: form.action,
+    method: 'POST',
+    data: formData,
+    processData: false,
+    contentType: false,
+    success: function() {
+      alert("Message sent successfully!");
+      form.reset();
+    },
+    error: function() {
+      alert("Error sending message.");
+    }
+  });
 });
