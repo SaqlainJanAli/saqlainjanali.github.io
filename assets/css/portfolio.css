@@ -11251,6 +11251,53 @@ p {
     margin-bottom: 30px;
   }
 }
+/* Force equal size and center alignment */
+.portfolio-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 4 / 3;
+  height: 250px; /* Fixed height */
+  /*max-width: 320px;*/
+  margin: auto;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Maintain full size images and cover */
+.portfolio-card .portfolio-card-img {
+  /*width: 100%;
+  height: 100%;*/
+  object-fit: contain;
+}
+
+/* Adjust overlay caption to accommodate multiline text */
+.portfolio-card .portfolio-card-overlay .portfolio-card-caption {
+  padding: 0 15px;
+  max-width: 90%;
+  text-align: center;
+}
+
+.portfolio-card-caption h4 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.portfolio-card-caption p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Responsive tweak for smaller screens */
+@media (max-width: 767.98px) {
+  .portfolio-card {
+    height: 320px;
+    max-width: 90%;
+  }
+}
+
 
 /* Pricing card */
 .pricing-wrapper {
